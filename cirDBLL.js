@@ -11,7 +11,9 @@ class CDBLL {
         this.head = null;
     }  
     // inserts a new node at end of CDBLL
-    insertAtEnd(newNode) {
+    insertAtEnd(data) {
+        // declare variable here because javascript is garbage collected
+        let newNode = new node(data);
         let cur = this.head;
         // if there is no head, insert newNode there and pointer prev and next to itself
         if(!cur) {
@@ -66,20 +68,14 @@ class CDBLL {
     }
 }
 
-let node1 = new node(1);
-let node2 = new node(2);
-let node3 = new node(3);
-let node4 = new node(4);
-let node5 = new node(5);
-
 
 let list = new CDBLL();
 
-list.insertAtEnd(node1);
-list.insertAtEnd(node2);
-list.insertAtEnd(node3);
-list.insertAtEnd(node4);
-list.insertAtEnd(node5);
+list.insertAtEnd(1);
+list.insertAtEnd(2);
+list.insertAtEnd(3);
+list.insertAtEnd(4);
+list.insertAtEnd(5);
 
 list.printListForwards();
 console.log('--------------');

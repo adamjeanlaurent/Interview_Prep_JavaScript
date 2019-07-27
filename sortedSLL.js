@@ -21,7 +21,9 @@ class Linkedlist {
 
     }
 
-    insert(newNode) {
+    insert(data) {
+        // declare variable here because javascript is garbage collected
+        let newNode = new Node(data);
         let cur = this.head;
         let prev = this.head;
 
@@ -71,16 +73,10 @@ class Linkedlist {
 
 let LL = new Linkedlist();
 
-let node1 = new Node(1);
-let node2 = new Node(2);
-let node3 = new Node(3);
-let node4 = new Node(4);
-let node5 = new Node(5);
-
-LL.insert(node3);
-LL.insert(node1);
-LL.insert(node5);
-LL.insert(node4);
-LL.insert(node2); 
+LL.insert(1);
+LL.insert(2);
+LL.insert(3);
+LL.insert(4);
+LL.insert(5); 
 
 LL.printList();
