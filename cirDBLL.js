@@ -53,7 +53,6 @@ class CDBLL {
         }
     }
 
-    // wtf is going on here
     printListBackwards() { 
         let cur = this.head.prev;
         if(cur != null) {
