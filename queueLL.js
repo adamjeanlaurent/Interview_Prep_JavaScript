@@ -12,6 +12,7 @@ class QueueLL {
         this.tail = null;
     }
 
+    // remove first element
     dequeue() {
         if(!this.head) {
             console.log("There's Nothing To Dequeue! The Queue Is Empty.");
@@ -31,6 +32,7 @@ class QueueLL {
         }
     }
 
+    // append to tail
     enqueue(data) {
         let newNode = new Node(data);
 
