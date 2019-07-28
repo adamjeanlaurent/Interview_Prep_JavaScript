@@ -1,5 +1,3 @@
-
-
 class Node {
     constructor(data) {
         this.next = null;
