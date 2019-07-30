@@ -9,7 +9,7 @@ class node {
 class CDBLL {
     constructor() {
         this.head = null;
-    }  
+    }
     // inserts a new node at end of CDBLL
     insertAtEnd(data) {
         // declare variable here because javascript is garbage collected
@@ -55,7 +55,7 @@ class CDBLL {
         }
     }
 
-    printListBackwards() { 
+    printListBackwards() {
         let cur = this.head.prev;
         if(cur != null) {
             do {
