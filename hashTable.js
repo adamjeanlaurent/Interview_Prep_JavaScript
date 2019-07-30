@@ -27,6 +27,12 @@ class HashTable {
       this.table[hashOfKey] = new LinkedList();
       this.table[hashOfKey].insertAtEnd(key, value);
     }
+    else if(this.table[hashOfKey].find(key, value)) {
+      console.log("This Key Value Pair Already Exists In The Table");
+    }
+    else {
+      this.table[hashOfKey].insertAtEnd(key, value);
+    }
   }
   // function to lookup if a key exists in a table
   checkIfKeyIsInTable(key, value) {
@@ -83,5 +89,5 @@ class Node {
 
 let myHashTable = new HashTable();
 myHashTable.insert("name", "adam");
+myHashTable.insert("name", "adam");
 console.log(myHashTable.checkIfKeyIsInTable("name", "adam"));
-console.log(myHashTable.checkIfKeyIsInTable("name", "bob"));
