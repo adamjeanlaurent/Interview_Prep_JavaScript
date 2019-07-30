@@ -48,6 +48,7 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
+  // inserts a node at the end of the list
   insertAtEnd(key, value) {
     let newNode = new Node(key, value);
     if(!this.head) {
@@ -59,6 +60,7 @@ class LinkedList {
       this.tail = newNode;
     }
   }
+  // checks if a key value pair exists in the list
   find(key, value) {
     let cur = this.head;
     while(cur) {
