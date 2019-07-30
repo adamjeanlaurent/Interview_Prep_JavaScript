@@ -21,25 +21,24 @@ class HashTable {
   insert(key, value) {
     // compute hash code of key
     let hashOfKey = hashCode(key);
-    let newKeyValuePair = new KeyValuePair(key, value);
     // check if a linkedlist exists at that index
     // if not, create one and insert the value at that index
     if(!this.table[hashOfKey]) {
       this.table[hashOfKey] = new LinkedList();
-      this.table[hashOfKey].insertAtEnd(newKeyValuePair);
+      this.table[hashOfKey].insertAtEnd(key, value);
     }
   }
   // function to lookup if a key exists in a table
-  checkIfKeyIsInTable(newKeyValuePair) {
+  checkIfKeyIsInTable(key, value) {
     // compute hashcode of key
-    let hashOfKey = hashCode(newKeyValuePair.key);
+    let hashOfKey = hashCode(key);
     // if there exists no linked list at this index, then return false
     if(!this.table[hashOfKey]) {
       return false;
     }
     // traverse through the linked list to find the value passed in
     else {
-      return this.table[hashOfKey].find(newKeyValuePair);
+      return this.table[hashOfKey].find(key, value);
       }
     }
   }
@@ -49,8 +48,8 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
-  insertAtEnd(newKeyValuePair) {
-    let newNode = new Node(newKeyValuePair.key, newKeyValuePair.value);
+  insertAtEnd(key, value) {
+    let newNode = new Node(key, value);
     if(!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -60,10 +59,10 @@ class LinkedList {
       this.tail = newNode;
     }
   }
-  find(newKeyValuePair) {
+  find(key, value) {
     let cur = this.head;
     while(cur) {
-      if(cur.data == newKeyValuePair.value && cur.key == newKeyValuePair.key) {
+      if(cur.data == value && cur.key == key) {
         return true;
       }
       cur = cur.next;
@@ -80,15 +79,7 @@ class Node {
   }
 }
 
-class KeyValuePair {
-  constructor(key, value) {
-    this.key = key;
-    this.value = value;
-  }
-}
-
 let myHashTable = new HashTable();
-let newKeyValuePair = new KeyValuePair("name", "adam");
-myHashTable.insert(newKeyValuePair.key, newKeyValuePair.value);
-console.log(myHashTable.checkIfKeyIsInTable(newKeyValuePair));
-console.log(myHashTable.checkIfKeyIsInTable(new KeyValuePair("bob", "adam")));
+myHashTable.insert("name", "adam");
+console.log(myHashTable.checkIfKeyIsInTable("name", "adam"));
+console.log(myHashTable.checkIfKeyIsInTable("name", "bob"));
