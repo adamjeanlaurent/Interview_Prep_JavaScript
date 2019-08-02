@@ -4,11 +4,11 @@ Is Unique: Implement an algorithm to determine if a string has all unique charac
  What if you cannot use additional data structures?
 */
 
-// O(N) time
-// O(N) Space
-
 // with additional data structues, using a set here
 // loop through str or arr, check if value is in a set, if so, then it's not unique, if you reach the end of the string, then all chars are unqiue
+
+// O(N) time
+// O(N) Space
 
 function isUnique(str) {
   let set = new Set();
