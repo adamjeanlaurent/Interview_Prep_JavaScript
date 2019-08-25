@@ -24,12 +24,28 @@ function insert(root, data) {
     return root;
 }
 
-function inorder(node){
-    if(node){
-       inorder(node.left);
-       console.log(node.data);
-       inorder(node.right);
+function inorder(root){
+    if(root){
+       inorder(root.left);
+       console.log(root.data);
+       inorder(root.right);
     }
+ }
+
+ function preorder(node) {
+    if(root) {
+        console.log(root.data);
+        preorder(root.left);
+        preorder(root.right);
+    }
+ }
+
+ function postorder(root) {
+     if(root) {
+         postorder(root.left);
+         postorder(root.right);
+         console.log(root.data);
+     }
  }
 
 function search(root, data) {
@@ -53,11 +69,6 @@ function deleteNode(root, data) {
         }
         // CASE 2: Node to delete has one child
         else if(root.right == null) {
-            /*
-            - move a ptr to the child
-            - delete the root
-            - return temp
-            */
 
             let temp = root.left;
             root = null;
@@ -70,6 +81,7 @@ function deleteNode(root, data) {
             return temp;
         }
 
+        // CASE 3: Node to delete has two children
         else {
             let successor = findMin(root.right);
             root.data = successor.data;
@@ -80,6 +92,12 @@ function deleteNode(root, data) {
     return root;
 }
 
+function findMin(root) {
+    if(root == null) return root;
+    if(root.left) root = findMin(root.left);
+    if(root.left == null) return root;
+}
+
 let root = null;
 root = insert(root,10);
 root = insert(root,20);
@@ -88,5 +106,7 @@ root = insert(root,40);
 root = insert(root,38);
 root = insert(root,42);
 
-root = deleteNode(root, 40);
-inorder(root);
+postorder(root);
+
+// root = deleteNode(root, 40);
+// inorder(root);
