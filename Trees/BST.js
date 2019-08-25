@@ -172,3 +172,18 @@ class Tree {
         }
     }
 }
+
+// function traverse(root, num) {
+
+//     if(root == null) return null;
+
+//     if(root.data == data) return data;
+
+//     if(num > root.data) {
+//         return traverse(root.right, num);
+//     }
+    
+//     else {
+//         return traverse(root.left, num);
+//     }
+// }
