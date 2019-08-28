@@ -20,5 +20,5 @@ function bfs(start) {
     }
 
 function dfs(start) {
-    let stack 
+    let stack = [];
 }
