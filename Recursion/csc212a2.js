@@ -19,9 +19,18 @@ returns the sum of the last s elements in the sequence from 1 to n (inclusive).
   */
  function suffixSum(n,s) {
     if(s == 0) return 0;
-  
     return n - s + 1 + suffixSum(n, s - 1);
   }
-  
-  console.log(suffixSum(10, 10));
-  
+
+/*
+Write a function that returns true if the sequence of 0 < n integers in A is sorted in non-increasing order and false otherwise.
+*/
+
+function isSorted(arr, n) {
+    if(n <= 0) return true;
+    if(arr[arr.length - n - 1] >= arr[arr.length - n - 2]) {
+      arr.pop();
+      return isSorted(arr, n - 1);
+    }
+    return false;
+  }
