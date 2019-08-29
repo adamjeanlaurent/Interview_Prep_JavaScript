@@ -97,8 +97,6 @@ function findMin(root) {
     if(root.left == null) return root;
 }
 
-
-
 function minHeight(arr) {
     let midValue = arr[Math.floor(arr.length/2)];
     let root = new BSTNode(midValue);
@@ -109,5 +107,17 @@ function minHeight(arr) {
             
         }
     }
-
 }
+
+/*
+    edge cases:
+    - there's two elements in one of the subtrees causing a situation where ex.(1,2,3,4) where the pointer is pointing to 1 and 2 
+    isn't in the tree
+
+    - there's a regular even number and we want to jsut insert the last element only because it's right neighbour is already in
+
+    - there's a regular odd number and we don't need to manually insert the last element (covered)
+
+
+
+*/

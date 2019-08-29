@@ -11,7 +11,7 @@ class BSTNode {
 function insert(root, data) {
     if(root == null) {
         root = new BSTNode(data);
-    }
+    } 
      
     else if(data <= root.data) {
         root.left = insert(root.left, data);
@@ -69,8 +69,7 @@ function deleteNode(root, data) {
         }
         // CASE 2: Node to delete has one child
         else if(root.right == null) {
-
-            let temp = root.left;
+            let temp = root.left;   
             root = null;
             return temp;
         }
