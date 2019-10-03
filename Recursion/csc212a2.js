@@ -34,3 +34,20 @@ function isSorted(arr, n) {
     }
     return false;
   }
+
+  /*
+Write a function that, given a sequence A of 1 < n integers, returns 1 if the input sequence is in strict increasing order, 
+-1 if the sequence is in strict decreasing order, and 0 otherwise.
+  */
+
+  function checkOrder(arr, n) {
+
+  }
+
+
+
+  'test.e.mail+bob.cathy@leetcode.com'
+
+  'testemailleetcodecom'
+
+  

@@ -1,3 +1,6 @@
+
+// O(V) + (E)
+
 function bfs(start) {
     let queue = [];
     let seen = new Set();
